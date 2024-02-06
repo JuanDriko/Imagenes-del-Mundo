@@ -113,9 +113,9 @@ export default {
     confirmButtonText: "Continuar",
     allowOutsideClick: false,
   }).then(() => {
-    competitor.score += 21;
+    competitor.score += 3;
     console.log("Score", this.competitors);
-    this.globalScore += 21;
+    this.globalScore += 3;
     this.button = true;
     this.msg = false;
   });
