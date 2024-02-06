@@ -3,10 +3,10 @@ import Home from '@/views/Home.vue';
 import Contest from '@/views/Contest.vue';
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/iamgealegra/'),
   routes: [
     {
-      path: '/',
+      path: '/iamgealegra/',
       name: 'Home',
       component: Home
     },
