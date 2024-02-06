@@ -40,7 +40,6 @@ export const generateInvoice = async (winner) => {
           discount: 0,
           name: winner.name,
           id: 1,
-          observations: "Ganador concurso Imágenes del Mundo",
           quantity: winner.score,
           price: winner.score,
           description: "Ganador concurso Imágenes del Mundo"

@@ -3,7 +3,7 @@
     <div v-if="!getWinner()" class="mt-5">
       <div class="container-fluid" v-if="button">
         <transition name="fade-slide" appear class="d-flex align-items-center justify-content-center" v-for="competitor in competitors" :key="competitor.id">
-          <h5 class="c-light">
+          <h5>
             Puntos de {{ competitor.name }} : {{ competitor.score }}
           </h5>
         </transition>
@@ -12,20 +12,24 @@
         </transition>
 
         <transition>
-          <div v-if="msg" class="col-3 m-auto bg-danger rounded-bottom text-center">
+          <div v-if="msg" class="col-2 m-auto bg-danger rounded-bottom text-center">
             <i class="fas fa-exclamation-circle"></i>
             <p class="ms-2">Palabra no encontrada, inténtelo de nuevo</p>
           </div>
         </transition>
       </div>
 
-      <div v-else>
+      <div v-else class="align-items-center ms-5">
         <h2 class="text-center">Ronda {{ round }}</h2>
-        <div class="d-flex">
-          <transition name="fade-slide" appear v-for="competitor in competitors" :key="competitor.id">
+
+        <div class="d-flex flex-wrap justify-content-center align-items-center">
+        <transition class="mx-3" name="fade-slide" appear v-for="competitor in competitors" :key="competitor.id">
+          <div> 
             <Seller :competitor="competitor" @plusScore="plusScore(competitor.id)" />
-          </transition>
-        </div>
+          </div>
+        </transition>
+      </div>
+
       </div>
     </div>
 
@@ -109,9 +113,9 @@ export default {
     confirmButtonText: "Continuar",
     allowOutsideClick: false,
   }).then(() => {
-    competitor.score += 3;
+    competitor.score += 21;
     console.log("Score", this.competitors);
-    this.globalScore += 3;
+    this.globalScore += 21;
     this.button = true;
     this.msg = false;
   });

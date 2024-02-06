@@ -1,6 +1,6 @@
 <template>
-    <div class="container text-center mt-5 ">
-        <div class="card bg-light shadow" style="width: 18rem;">
+    <div class="container text-center mt-3 ">
+        <div class="card bg-light shadow" style="width: 20rem">
           <img :src="competitor.image" class="card-img-top img-fluid" alt="imagen" style="height: 350px;">
           <div class="card-body">
             <h5 class="card-title">{{ competitor.name }}</h5>
