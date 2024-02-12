@@ -89,7 +89,7 @@ export default {
     async searchCollections(query) {
       try {
         const collections = await searchImages(query);
-        if (collections && collections.length > 0) {
+        if (collections.length > 0) {
           this.competitors.forEach((competitor, index) => {
             competitor.image = collections[index].cover_photo.urls.regular;
           });
@@ -97,11 +97,11 @@ export default {
           this.button = false;
           this.round += 1;
         } else {
-          console.log("No se encontraron imágenes para la búsqueda.");
+          console.log("No se encontraron imágenes");
           this.msg = true;
         }
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error", error);
       }
     },
     plusScore(id) {
